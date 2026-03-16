@@ -89,7 +89,7 @@
     transition: color 0.15s;
   }
   .toc-sidebar .toc-entry:hover { color: var(--rust); }
-  .toc-sidebar .toc-entry.active { color: var(--rust); }
+  .toc-sidebar 
 
   /* ── Main column ── */
   .main { grid-area: main; min-width: 0; }
@@ -255,49 +255,49 @@
     <span class="toc-label">Contents</span>
     <nav>
       <div class="toc-section">
-        <a href="#s1" class="toc-section-title">I — Mind</a>
-        <a href="#m-imagination" class="toc-entry">Imagination as purpose</a>
-        <a href="#m-twobrains" class="toc-entry">Two brains, one hand</a>
-        <a href="#m-thalamus" class="toc-entry">Thalamus as governor</a>
-        <a href="#m-metainstinct" class="toc-entry">Meta-instinct</a>
+        <span class="toc-section-title">I — Mind</span>
+        <span class="toc-entry">Imagination as purpose</span>
+        <span class="toc-entry">Two brains, one hand</span>
+        <span class="toc-entry">Thalamus as governor</span>
+        <span class="toc-entry">Meta-instinct</span>
       </div>
       <div class="toc-section">
-        <a href="#s2" class="toc-section-title">II — Method</a>
-        <a href="#m-negspace" class="toc-entry">The negative space</a>
-        <a href="#m-jamaisvu" class="toc-entry">Jamais vu as practice</a>
-        <a href="#m-natphil" class="toc-entry">Natural philosopher</a>
-        <a href="#m-shapedspace" class="toc-entry">Solution-shaped space</a>
+        <span class="toc-section-title">II — Method</span>
+        <span class="toc-entry">The negative space</span>
+        <span class="toc-entry">Jamais vu as practice</span>
+        <span class="toc-entry">Natural philosopher</span>
+        <span class="toc-entry">Solution-shaped space</span>
       </div>
       <div class="toc-section">
-        <a href="#s3" class="toc-section-title">III — Trust</a>
-        <a href="#m-willnot" class="toc-entry">Will, not can</a>
-        <a href="#m-mistrust" class="toc-entry">Mistrust as structure</a>
-        <a href="#m-gaslight" class="toc-entry">Self-gaslighting</a>
+        <span class="toc-section-title">III — Trust</span>
+        <span class="toc-entry">Will, not can</span>
+        <span class="toc-entry">Mistrust as structure</span>
+        <span class="toc-entry">Self-gaslighting</span>
       </div>
       <div class="toc-section">
-        <a href="#s4" class="toc-section-title">IV — Physics</a>
-        <a href="#m-darkmatter" class="toc-entry">Dark matter location</a>
-        <a href="#m-higgs" class="toc-entry">The Higgs gap</a>
-        <a href="#m-edge" class="toc-entry">Horror of the edge</a>
+        <span class="toc-section-title">IV — Physics</span>
+        <span class="toc-entry">Dark matter location</span>
+        <span class="toc-entry">The Higgs gap</span>
+        <span class="toc-entry">Horror of the edge</span>
       </div>
       <div class="toc-section">
-        <a href="#s5" class="toc-section-title">V — Co-Synthesis</a>
-        <a href="#m-invisible" class="toc-entry">When it disappears</a>
-        <a href="#m-cosyn" class="toc-entry">Augmented host synthesis</a>
-        <a href="#m-self" class="toc-entry">PCIS as self-work</a>
+        <span class="toc-section-title">V — Co-Synthesis</span>
+        <span class="toc-entry">When it disappears</span>
+        <span class="toc-entry">Augmented host synthesis</span>
+        <span class="toc-entry">PCIS as self-work</span>
       </div>
       <div class="toc-section">
-        <a href="#s6" class="toc-section-title">VI — Absurdity</a>
-        <a href="#m-compost" class="toc-entry">Composting, not coping</a>
-        <a href="#m-8020" class="toc-entry">The 80/20 ratio</a>
+        <span class="toc-section-title">VI — Absurdity</span>
+        <span class="toc-entry">Composting, not coping</span>
+        <span class="toc-entry">The 80/20 ratio</span>
       </div>
       <div class="toc-section">
-        <a href="#s7" class="toc-section-title">VII — Teaching</a>
-        <a href="#m-iatrogenic" class="toc-entry">The iatrogenic school</a>
-        <a href="#m-wolfswitch" class="toc-entry">Wolf's switch</a>
-        <a href="#m-redpill" class="toc-entry">The red pill is simple</a>
-        <a href="#m-ailit" class="toc-entry">AI literacy inverted</a>
-        <a href="#m-pcisschool" class="toc-entry">One student, one spec</a>
+        <span class="toc-section-title">VII — Teaching</span>
+        <span class="toc-entry">The iatrogenic school</span>
+        <span class="toc-entry">Wolf's switch</span>
+        <span class="toc-entry">The red pill is simple</span>
+        <span class="toc-entry">AI literacy inverted</span>
+        <span class="toc-entry">One student, one spec</span>
       </div>
     </nav>
   </aside>
@@ -655,19 +655,6 @@
 
 </div>
 
-<script>
-  const entries = document.querySelectorAll('.toc-entry');
-  const sections = document.querySelectorAll('.musing[id]');
-  const obs = new IntersectionObserver(els => {
-    els.forEach(e => {
-      if (e.isIntersecting) {
-        entries.forEach(a => a.classList.remove('active'));
-        const link = document.querySelector('.toc-entry[href="#' + e.target.id + '"]');
-        if (link) link.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-20% 0px -70% 0px' });
-  sections.forEach(s => obs.observe(s));
-</script>
+
 </body>
 </html>
